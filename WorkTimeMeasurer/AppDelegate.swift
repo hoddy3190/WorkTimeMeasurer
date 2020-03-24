@@ -12,9 +12,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var menu: NSMenu!
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var button: NSStatusBarButton!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        statusItem.menu = menu
+        button = statusItem.button!
+        button.title = "WT Measurer"
+        button.image = NSImage(named: "icon")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
