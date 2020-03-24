@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFE329F9242A6B5D00580DDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE329F8242A6B5D00580DDB /* AppDelegate.swift */; };
+		DFE329FB242A6B5D00580DDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE329FA242A6B5D00580DDB /* ViewController.swift */; };
+		DFE329FD242A6B6000580DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE329FC242A6B6000580DDB /* Assets.xcassets */; };
+		DFE32A00242A6B6000580DDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE329FE242A6B6000580DDB /* Main.storyboard */; };
+		DFE32A0C242A6B6000580DDB /* WorkTimeMeasurerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE32A0B242A6B6000580DDB /* WorkTimeMeasurerTests.swift */; };
+		DFE32A17242A6B6000580DDB /* WorkTimeMeasurerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE32A16242A6B6000580DDB /* WorkTimeMeasurerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFE32A08242A6B6000580DDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFE329ED242A6B5D00580DDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE329F4242A6B5D00580DDB;
+			remoteInfo = WorkTimeMeasurer;
+		};
+		DFE32A13242A6B6000580DDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFE329ED242A6B5D00580DDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE329F4242A6B5D00580DDB;
+			remoteInfo = WorkTimeMeasurer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DFE329F5242A6B5D00580DDB /* WorkTimeMeasurer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTimeMeasurer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE329F8242A6B5D00580DDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFE329FA242A6B5D00580DDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFE329FC242A6B6000580DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFE329FF242A6B6000580DDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFE32A01242A6B6000580DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE32A02242A6B6000580DDB /* WorkTimeMeasurer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkTimeMeasurer.entitlements; sourceTree = "<group>"; };
+		DFE32A07242A6B6000580DDB /* WorkTimeMeasurerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkTimeMeasurerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE32A0B242A6B6000580DDB /* WorkTimeMeasurerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeMeasurerTests.swift; sourceTree = "<group>"; };
+		DFE32A0D242A6B6000580DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE32A12242A6B6000580DDB /* WorkTimeMeasurerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkTimeMeasurerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE32A16242A6B6000580DDB /* WorkTimeMeasurerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeMeasurerUITests.swift; sourceTree = "<group>"; };
+		DFE32A18242A6B6000580DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFE329F2242A6B5D00580DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A04242A6B6000580DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A0F242A6B6000580DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFE329EC242A6B5D00580DDB = {
+			isa = PBXGroup;
+			children = (
+				DFE329F7242A6B5D00580DDB /* WorkTimeMeasurer */,
+				DFE32A0A242A6B6000580DDB /* WorkTimeMeasurerTests */,
+				DFE32A15242A6B6000580DDB /* WorkTimeMeasurerUITests */,
+				DFE329F6242A6B5D00580DDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFE329F6242A6B5D00580DDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFE329F5242A6B5D00580DDB /* WorkTimeMeasurer.app */,
+				DFE32A07242A6B6000580DDB /* WorkTimeMeasurerTests.xctest */,
+				DFE32A12242A6B6000580DDB /* WorkTimeMeasurerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFE329F7242A6B5D00580DDB /* WorkTimeMeasurer */ = {
+			isa = PBXGroup;
+			children = (
+				DFE329F8242A6B5D00580DDB /* AppDelegate.swift */,
+				DFE329FA242A6B5D00580DDB /* ViewController.swift */,
+				DFE329FC242A6B6000580DDB /* Assets.xcassets */,
+				DFE329FE242A6B6000580DDB /* Main.storyboard */,
+				DFE32A01242A6B6000580DDB /* Info.plist */,
+				DFE32A02242A6B6000580DDB /* WorkTimeMeasurer.entitlements */,
+			);
+			path = WorkTimeMeasurer;
+			sourceTree = "<group>";
+		};
+		DFE32A0A242A6B6000580DDB /* WorkTimeMeasurerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFE32A0B242A6B6000580DDB /* WorkTimeMeasurerTests.swift */,
+				DFE32A0D242A6B6000580DDB /* Info.plist */,
+			);
+			path = WorkTimeMeasurerTests;
+			sourceTree = "<group>";
+		};
+		DFE32A15242A6B6000580DDB /* WorkTimeMeasurerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFE32A16242A6B6000580DDB /* WorkTimeMeasurerUITests.swift */,
+				DFE32A18242A6B6000580DDB /* Info.plist */,
+			);
+			path = WorkTimeMeasurerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFE329F4242A6B5D00580DDB /* WorkTimeMeasurer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE32A1B242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurer" */;
+			buildPhases = (
+				DFE329F1242A6B5D00580DDB /* Sources */,
+				DFE329F2242A6B5D00580DDB /* Frameworks */,
+				DFE329F3242A6B5D00580DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorkTimeMeasurer;
+			productName = WorkTimeMeasurer;
+			productReference = DFE329F5242A6B5D00580DDB /* WorkTimeMeasurer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFE32A06242A6B6000580DDB /* WorkTimeMeasurerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE32A1E242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurerTests" */;
+			buildPhases = (
+				DFE32A03242A6B6000580DDB /* Sources */,
+				DFE32A04242A6B6000580DDB /* Frameworks */,
+				DFE32A05242A6B6000580DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFE32A09242A6B6000580DDB /* PBXTargetDependency */,
+			);
+			name = WorkTimeMeasurerTests;
+			productName = WorkTimeMeasurerTests;
+			productReference = DFE32A07242A6B6000580DDB /* WorkTimeMeasurerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFE32A11242A6B6000580DDB /* WorkTimeMeasurerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE32A21242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurerUITests" */;
+			buildPhases = (
+				DFE32A0E242A6B6000580DDB /* Sources */,
+				DFE32A0F242A6B6000580DDB /* Frameworks */,
+				DFE32A10242A6B6000580DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFE32A14242A6B6000580DDB /* PBXTargetDependency */,
+			);
+			name = WorkTimeMeasurerUITests;
+			productName = WorkTimeMeasurerUITests;
+			productReference = DFE32A12242A6B6000580DDB /* WorkTimeMeasurerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFE329ED242A6B5D00580DDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Hodaka Suzuki";
+				TargetAttributes = {
+					DFE329F4242A6B5D00580DDB = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					DFE32A06242A6B6000580DDB = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = DFE329F4242A6B5D00580DDB;
+					};
+					DFE32A11242A6B6000580DDB = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = DFE329F4242A6B5D00580DDB;
+					};
+				};
+			};
+			buildConfigurationList = DFE329F0242A6B5D00580DDB /* Build configuration list for PBXProject "WorkTimeMeasurer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFE329EC242A6B5D00580DDB;
+			productRefGroup = DFE329F6242A6B5D00580DDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFE329F4242A6B5D00580DDB /* WorkTimeMeasurer */,
+				DFE32A06242A6B6000580DDB /* WorkTimeMeasurerTests */,
+				DFE32A11242A6B6000580DDB /* WorkTimeMeasurerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFE329F3242A6B5D00580DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE329FD242A6B6000580DDB /* Assets.xcassets in Resources */,
+				DFE32A00242A6B6000580DDB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A05242A6B6000580DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A10242A6B6000580DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFE329F1242A6B5D00580DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE329FB242A6B5D00580DDB /* ViewController.swift in Sources */,
+				DFE329F9242A6B5D00580DDB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A03242A6B6000580DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE32A0C242A6B6000580DDB /* WorkTimeMeasurerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE32A0E242A6B6000580DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE32A17242A6B6000580DDB /* WorkTimeMeasurerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFE32A09242A6B6000580DDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE329F4242A6B5D00580DDB /* WorkTimeMeasurer */;
+			targetProxy = DFE32A08242A6B6000580DDB /* PBXContainerItemProxy */;
+		};
+		DFE32A14242A6B6000580DDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE329F4242A6B5D00580DDB /* WorkTimeMeasurer */;
+			targetProxy = DFE32A13242A6B6000580DDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DFE329FE242A6B6000580DDB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE329FF242A6B6000580DDB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFE32A19242A6B6000580DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DFE32A1A242A6B6000580DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DFE32A1C242A6B6000580DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WorkTimeMeasurer/WorkTimeMeasurer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DFE32A1D242A6B6000580DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WorkTimeMeasurer/WorkTimeMeasurer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DFE32A1F242A6B6000580DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTimeMeasurer.app/Contents/MacOS/WorkTimeMeasurer";
+			};
+			name = Debug;
+		};
+		DFE32A20242A6B6000580DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTimeMeasurer.app/Contents/MacOS/WorkTimeMeasurer";
+			};
+			name = Release;
+		};
+		DFE32A22242A6B6000580DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WorkTimeMeasurer;
+			};
+			name = Debug;
+		};
+		DFE32A23242A6B6000580DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WorkTimeMeasurerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.private.WorkTimeMeasurerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WorkTimeMeasurer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFE329F0242A6B5D00580DDB /* Build configuration list for PBXProject "WorkTimeMeasurer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE32A19242A6B6000580DDB /* Debug */,
+				DFE32A1A242A6B6000580DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFE32A1B242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE32A1C242A6B6000580DDB /* Debug */,
+				DFE32A1D242A6B6000580DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFE32A1E242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE32A1F242A6B6000580DDB /* Debug */,
+				DFE32A20242A6B6000580DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFE32A21242A6B6000580DDB /* Build configuration list for PBXNativeTarget "WorkTimeMeasurerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE32A22242A6B6000580DDB /* Debug */,
+				DFE32A23242A6B6000580DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFE329ED242A6B5D00580DDB /* Project object */;
+}
