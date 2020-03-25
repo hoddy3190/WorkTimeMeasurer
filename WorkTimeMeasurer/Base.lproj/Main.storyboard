@@ -77,6 +77,9 @@
                         </menuItem>
                         <menuItem title="Item 2" id="vYU-9G-zew">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="startTimer:" target="Voe-Tx-rLC" id="rVs-ts-64m"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Item 3" id="mpr-pG-UpF">
                             <modifierMask key="keyEquivalentModifierMask"/>
