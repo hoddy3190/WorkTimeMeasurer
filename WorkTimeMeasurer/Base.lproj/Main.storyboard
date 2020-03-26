@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -66,7 +67,6 @@
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="e3T-K8-g60">
                     <items>
                         <menuItem title="Item 1" id="lPZ-Lh-at5">
@@ -87,10 +87,41 @@
                                 <action selector="terminate:" target="Ady-hI-5gd" id="Yc4-qM-ICp"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Item 4" id="5hj-Aj-ye6">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="cpe-oQ-0EW" kind="modal" id="KOf-Ez-sgd"/>
+                            </connections>
+                        </menuItem>
                     </items>
                 </menu>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qd6-X3-biQ">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="cpe-oQ-0EW" sceneMemberID="viewController">
+                    <view key="view" id="yvk-yG-VgE">
+                        <rect key="frame" x="0.0" y="0.0" width="348" height="46"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-T9-uz8">
+                                <rect key="frame" x="20" y="12" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="blf-10-VSQ">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="T4V-Yz-IzV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="106"/>
         </scene>
     </scenes>
 </document>
