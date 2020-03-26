@@ -36,6 +36,7 @@ class ViewController: NSViewController, NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        tableView.headerView = nil
         return programs[row]
     }
 
