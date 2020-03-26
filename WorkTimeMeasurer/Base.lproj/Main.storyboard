@@ -89,9 +89,6 @@
                         </menuItem>
                         <menuItem title="Item 4" id="5hj-Aj-ye6">
                             <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <segue destination="cpe-oQ-0EW" kind="modal" id="KOf-Ez-sgd"/>
-                            </connections>
                         </menuItem>
                     </items>
                 </menu>
@@ -102,7 +99,7 @@
         <!--View Controller-->
         <scene sceneID="Qd6-X3-biQ">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="cpe-oQ-0EW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="cpe-oQ-0EW" customClass="ViewController" customModule="WorkTimeMeasurer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yvk-yG-VgE">
                         <rect key="frame" x="0.0" y="0.0" width="348" height="46"/>
                         <autoresizingMask key="autoresizingMask"/>

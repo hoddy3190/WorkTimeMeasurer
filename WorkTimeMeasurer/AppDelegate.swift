@@ -15,18 +15,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var button: NSStatusBarButton!
     
+    let popover = NSPopover()
+    var eventMonitor: EventMonitor?
+    
     var nowTime: Double = Double()
     var elapsedTime: Double = Double()
     var displayTime: Double = Double()
     var savedTime: Double = Double()
     var startOrStop: Bool = false
     var timer: Timer = Timer()
+    
+    
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.menu = menu
+        //statusItem.menu = menu
         button = statusItem.button!
         button.title = "WT Measurer"
         button.image = NSImage(named: "icon")
+        button.action = #selector(togglePopover(_:))
+        
+        let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "SecondViewController") as! ViewController
+        
+        popover.contentViewController = mainViewController
+        
+        eventMonitor = EventMonitor(mask: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { [weak self] event in
+            if let popover = self?.popover {
+                if popover.isShown {
+                    self?.closePopover(event)
+                }
+            }
+        }
+        eventMonitor?.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -55,5 +75,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         button.title = minText + ":" + secText
     }
     
+    
+    @objc func togglePopover(_ sender: AnyObject?) {
+        if popover.isShown {
+            closePopover(sender)
+        } else {
+            showPopover(sender)
+        }
+    }
+    
+    func showPopover(_ sender: AnyObject?) {
+        if let button = statusItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            eventMonitor?.start()
+        }
+    }
+    
+    func closePopover(_ sender: AnyObject?) {
+        popover.performClose(sender)
+        eventMonitor?.stop()
+    }
 }
 
