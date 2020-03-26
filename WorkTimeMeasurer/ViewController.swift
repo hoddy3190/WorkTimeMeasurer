@@ -8,7 +8,14 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+struct Record:Codable {
+    let from:Date
+    let to:Date
+    let taskname:String
+}
+
+
+class ViewController: NSViewController, NSTableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,16 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    let programs = ["Swift", "C", "Java", "JavaScript", "PHP", "Python"]
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return programs.count
+    }
+    
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        return programs[row]
+    }
 
 }
 
