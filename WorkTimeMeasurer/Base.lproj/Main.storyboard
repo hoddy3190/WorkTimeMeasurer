@@ -113,7 +113,7 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raP-Ai-d5Y">
-                                <rect key="frame" x="18" y="245" width="71" height="29"/>
+                                <rect key="frame" x="18" y="257" width="40" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="02:30" id="tAe-EZ-tCT">
                                     <font key="font" metaFont="system"/>
@@ -193,12 +193,12 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="djc-nf-7mF">
-                                                            <rect key="frame" x="71" y="1" width="223" height="17"/>
+                                                        <tableCellView identifier="col2" id="djc-nf-7mF">
+                                                            <rect key="frame" x="71" y="1" width="223" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-jD-UI6">
-                                                                    <rect key="frame" x="0.0" y="-12" width="223" height="17"/>
+                                                                    <rect key="frame" x="1" y="12" width="223" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Myb-C5-B2N">
                                                                         <font key="font" metaFont="system"/>
@@ -226,12 +226,12 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="0lJ-tL-Jqa">
-                                                            <rect key="frame" x="297" y="1" width="64" height="17"/>
+                                                        <tableCellView identifier="col3" id="0lJ-tL-Jqa">
+                                                            <rect key="frame" x="297" y="1" width="64" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-o8-pfS">
-                                                                    <rect key="frame" x="25" y="-2" width="13" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="9" width="64" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zos-ft-H7T">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -254,7 +254,7 @@
                                     <rect key="frame" x="0.0" y="187" width="348" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="W2W-aS-44x">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="W2W-aS-44x">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

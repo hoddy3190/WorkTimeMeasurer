@@ -46,6 +46,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //            (cell as AnyObject).imageView?.image = NSImage(named: NSImage.actionTemplateName)
             cellView.button.tag = row
             return cellView
+        } else if (tableColumn == tableView.tableColumns[1]) {
+            let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col2"), owner: self) as! NSTableCellView
+            return cellView
+        } else if (tableColumn == tableView.tableColumns[2]) {
+            let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! NSTableCellView
+            return cellView
         }
         
         
