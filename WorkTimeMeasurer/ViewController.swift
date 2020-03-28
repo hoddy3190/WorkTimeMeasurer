@@ -48,6 +48,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             return cellView
         } else if (tableColumn == tableView.tableColumns[1]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col2"), owner: self) as! NSTableCellView
+            cellView.textField?.stringValue = programs[row]
             return cellView
         } else if (tableColumn == tableView.tableColumns[2]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! NSTableCellView
