@@ -200,7 +200,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="col3" id="0lJ-tL-Jqa">
+                                                        <tableCellView identifier="col3" id="0lJ-tL-Jqa" customClass="DeleteButtonCellView" customModule="WorkTimeMeasurer" customModuleProvider="target">
                                                             <rect key="frame" x="307" y="5" width="41" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -211,8 +211,14 @@
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="deleteTask:" target="cpe-oQ-0EW" id="ryf-BE-E1S"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
+                                                            <connections>
+                                                                <outlet property="button" destination="xUG-o8-pfS" id="2oc-hd-yXW"/>
+                                                            </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>

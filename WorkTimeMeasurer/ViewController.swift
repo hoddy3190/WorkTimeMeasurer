@@ -58,7 +58,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             cellView.textField?.stringValue =  tasknames![row]
             return cellView
         } else if (tableColumn == tableView.tableColumns[2]) {
-            let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! NSTableCellView
+            let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! DeleteButtonCellView
+            cellView.button.tag = row
             return cellView
         }
         
@@ -80,6 +81,14 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         tableView.reloadData()
     }
     
+    @IBAction func deleteTask(_ sender: NSButtonCell) {
+        let row = sender.tag
+        var tasknames = defaults.object(forKey: "tasknames") as? [String]
+        tasknames?.remove(at: row)
+        defaults.set(tasknames, forKey: "tasknames")
+        tableView.reloadData()
+    }
+    
 }
 
 // thx. https://www.appcoda.com/macos-programming-tableview/
@@ -87,5 +96,11 @@ class CustomCellView: NSTableCellView {
     
     @IBOutlet weak var button: NSButton!
     @IBOutlet weak var buttonCell: NSButtonCell!
+    
+}
+
+class DeleteButtonCellView: NSTableCellView {
+    
+    @IBOutlet weak var button: NSButton!
     
 }
