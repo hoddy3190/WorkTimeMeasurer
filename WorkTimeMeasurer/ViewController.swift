@@ -68,6 +68,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         } else if (tableColumn == tableView.tableColumns[2]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! DeleteButtonCellView
             cellView.button.tag = row
+            if (row == doingTaskRow) {
+                cellView.resetButton.isHidden = false
+                cellView.button.isHidden = true
+            } else {
+                cellView.resetButton.isHidden = true
+                cellView.button.isHidden = false
+            }
             return cellView
         }
         
@@ -111,6 +118,7 @@ class CustomCellView: NSTableCellView {
 
 class DeleteButtonCellView: NSTableCellView {
     
+    @IBOutlet weak var resetButton: NSButton!
     @IBOutlet weak var button: NSButton!
     
 }

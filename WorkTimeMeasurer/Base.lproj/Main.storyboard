@@ -214,6 +214,14 @@
                                                             <rect key="frame" x="299" y="5" width="71" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
+                                                                <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOq-9u-DCl">
+                                                                    <rect key="frame" x="22" y="14" width="20" height="18"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="reset" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="EbV-rx-ny2">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-o8-pfS">
                                                                     <rect key="frame" x="22" y="13" width="20" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -228,6 +236,7 @@
                                                             </subviews>
                                                             <connections>
                                                                 <outlet property="button" destination="xUG-o8-pfS" id="2oc-hd-yXW"/>
+                                                                <outlet property="resetButton" destination="iOq-9u-DCl" id="5Fj-ot-K5q"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -314,5 +323,6 @@
         <image name="NSSmartBadgeTemplate" width="14" height="14"/>
         <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
         <image name="play" width="128" height="128"/>
+        <image name="reset" width="128" height="128"/>
     </resources>
 </document>
