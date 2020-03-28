@@ -34,6 +34,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     let programs = ["Swift", "C", "Java", "JavaScript", "PHP", "Python"]
     
+    var doingTaskRow:Int? = nil // TODO: It stores RowNum, not ID, so when a row is added or deleted, doingTaskRow doesn't make sence. Fix it later.
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return defaults.array(forKey: "tasknames")!.count
@@ -51,6 +52,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //            let cell = tableColumn?.dataCell(forRow: row)
 //            (cell as AnyObject).imageView?.image = NSImage(named: NSImage.actionTemplateName)
             cellView.button.tag = row
+            if (row == doingTaskRow) {
+                cellView.time.isHidden = false
+                cellView.button.isHidden = true
+            } else {
+                cellView.time.isHidden = true
+                cellView.button.isHidden = false
+            }
             return cellView
         } else if (tableColumn == tableView.tableColumns[1]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col2"), owner: self) as! NSTableCellView
@@ -70,7 +78,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     @IBAction func startTimer(_ sender: NSButtonCell) {
         NSLog("fugafuga")
-        let hoge = sender.tag
+        doingTaskRow = sender.tag
+        tableView.reloadData()
     }
     
     @IBAction func addNewTask(_ sender: NSTextField) {
@@ -94,6 +103,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 // thx. https://www.appcoda.com/macos-programming-tableview/
 class CustomCellView: NSTableCellView {
     
+    @IBOutlet weak var time: NSTextField!
     @IBOutlet weak var button: NSButton!
     @IBOutlet weak var buttonCell: NSButtonCell!
     
