@@ -17,6 +17,7 @@ struct Record:Codable {
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
+    @IBOutlet weak var tableView: NSTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
             NSLog("hogehoge")
@@ -29,14 +30,19 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     }
     
+    let defaults = UserDefaults.standard
+    
     let programs = ["Swift", "C", "Java", "JavaScript", "PHP", "Python"]
     
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return programs.count
+        return defaults.array(forKey: "tasknames")!.count
+//        return programs.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         tableView.headerView = nil
+        //defaults.set(programs, forKey: "tasknames")
         
         if (tableColumn == tableView.tableColumns[0]) {
             NSLog("pppppppp")
@@ -48,7 +54,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             return cellView
         } else if (tableColumn == tableView.tableColumns[1]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col2"), owner: self) as! NSTableCellView
-            cellView.textField?.stringValue = programs[row]
+            let tasknames = defaults.object(forKey: "tasknames") as? [String]
+            cellView.textField?.stringValue =  tasknames![row]
             return cellView
         } else if (tableColumn == tableView.tableColumns[2]) {
             let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "col3"), owner: self) as! NSTableCellView
@@ -63,8 +70,16 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBAction func startTimer(_ sender: NSButtonCell) {
         NSLog("fugafuga")
         let hoge = sender.tag
-
     }
+    
+    @IBAction func addNewTask(_ sender: NSTextField) {
+        var tasknames = defaults.object(forKey: "tasknames") as? [String]
+        tasknames!.insert(sender.stringValue, at: 0)
+        defaults.set(tasknames, forKey: "tasknames")
+        sender.stringValue = ""
+        tableView.reloadData()
+    }
+    
 }
 
 // thx. https://www.appcoda.com/macos-programming-tableview/

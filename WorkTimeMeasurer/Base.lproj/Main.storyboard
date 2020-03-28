@@ -244,6 +244,9 @@
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="addNewTask:" target="cpe-oQ-0EW" id="WOz-ao-nQE"/>
+                                    </connections>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5R-dg-DH5">
@@ -282,6 +285,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zr2-SW-sw4" id="XI3-pI-Z7N"/>
+                    </connections>
                 </viewController>
                 <customObject id="T4V-Yz-IzV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
