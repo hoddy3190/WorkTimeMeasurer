@@ -17,6 +17,40 @@ struct Record:Codable {
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
+    
+    var nowTime: Double = Double()
+    var elapsedTime: Double = Double()
+    var displayTime: Double = Double()
+    var savedTime: Double = Double()
+    var startOrStop: Bool = false
+    var timer: Timer? = Timer()
+    var timeStr:String = "00:00:00"
+    var targetCellView:CustomCellView? = nil
+    
+    func toggleStartOrStop() {
+        startOrStop = !startOrStop
+    }
+    
+    @objc func updateTime() {
+        elapsedTime = NSDate.timeIntervalSinceReferenceDate
+        displayTime = (elapsedTime + savedTime) - nowTime
+        let hour = Int(displayTime / 3600)
+        let d = (Int(displayTime) % 3600)
+        let min = Int(d / 60)
+        let sec = Int(d % 60)
+        let hourText = String(format: "%02d", hour)
+        let minText = String(format: "%02d", min)
+        let secText = String(format: "%02d", sec)
+        timeStr = hourText + ":" + minText + ":" + secText
+//        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "hogehogehoge"), owner: self) as! CustomCellView
+        targetCellView!.time.stringValue = timeStr
+        //AppDelegate.button.title = minText + ":" + secText
+    }
+    
+    
+    
+    
+    
     @IBOutlet weak var tableView: NSTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +89,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             if (row == doingTaskRow) {
                 cellView.time.isHidden = false
                 cellView.button.isHidden = true
+                targetCellView = cellView
             } else {
                 cellView.time.isHidden = true
                 cellView.button.isHidden = false
@@ -87,6 +122,15 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         NSLog("fugafuga")
         doingTaskRow = sender.tag
         tableView.reloadData()
+        
+        
+//        if !startOrStop{
+            timer?.invalidate()
+            timer = nil
+            nowTime = NSDate.timeIntervalSinceReferenceDate
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+//            toggleStartOrStop()
+//        }
     }
     
     @IBAction func addNewTask(_ sender: NSTextField) {
