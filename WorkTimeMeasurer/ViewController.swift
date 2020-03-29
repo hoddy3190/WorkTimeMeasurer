@@ -8,16 +8,32 @@
 
 import Cocoa
 
-struct Record:Codable {
-    let from:Date
-    let to:Date
-    let taskname:String
+struct Task:Codable {
+    let startTime:Date
+    var endTime:Date
+    let taskName:String
 }
+
+struct DayTaskData:Codable {
+    var totalTime:Int
+    var taskList:[Task]
+}
+
+/*
+ firstTaskStartTime: {
+   let totalTime:Int
+   let taskList: [
+     { taskName:String, startTime: xxx, endTime: yyy}
+   ]
+ }
+ todaysStartTime:Int
+ */
 
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     
+    var now: NSDate? = nil
     var nowTime: Double = Double()
     var elapsedTime: Double = Double()
     var displayTime: Double = Double()
@@ -26,6 +42,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var timer: Timer? = Timer()
     var timeStr:String = "00:00:00"
     var targetCellView:CustomCellView? = nil
+    
+    var isWorkingToday = false
     
     func toggleStartOrStop() {
         startOrStop = !startOrStop
@@ -45,10 +63,14 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "hogehogehoge"), owner: self) as! CustomCellView
         targetCellView!.time.stringValue = timeStr
         //AppDelegate.button.title = minText + ":" + secText
+        
+        
+        
+        let key = defaults.string(forKey: "startTimeOfToday")!
+//        var obj = defaults.object(forKey: key) as! DayTaskData
+//        let now = NSDate()
+//        (obj.taskList[0]).endTime = now as Date
     }
-    
-    
-    
     
     
     @IBOutlet weak var tableView: NSTableView!
@@ -127,10 +149,44 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //        if !startOrStop{
             timer?.invalidate()
             timer = nil
-            nowTime = NSDate.timeIntervalSinceReferenceDate
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        now = NSDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd"
+        
+        
 //            toggleStartOrStop()
 //        }
+        let hogef = dateFormatter.string(from: now as! Date)
+        if (!isWorkingToday) {
+            defaults.set(hogef, forKey: "startTimeOfToday")
+            isWorkingToday = true
+        }
+            
+            //let ll = DayTaskData(totalTime: 0, taskList: [Task(startTime: now as! Date, endTime: now as! Date, taskName: "DDD")])
+        
+            
+        let task = ["startTime": hogef, "endTime": hogef, "taskName": "DDD"]
+        
+        let hoge = defaults.object(forKey: hogef)
+        if (hoge == nil) {
+            defaults.set(["totalTime": 0, "taskList": [task]], forKey: hogef)
+        } else {
+            var a = hoge! as! Dictionary<String, Any>
+            var b = a["taskList"] as? [Dictionary<String, String>]
+            if (b == nil) {
+              b = []
+            }
+            b!.append(["startTime": hogef, "endTime": hogef, "taskName": "DDD"])
+            a["taskList"] = b
+            defaults.set(a, forKey: hogef)
+        }
+            
+        
+        
+        NSLog("defaults:%@", defaults.dictionaryRepresentation())
+        
+        nowTime = NSDate.timeIntervalSinceReferenceDate
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     @IBAction func addNewTask(_ sender: NSTextField) {
