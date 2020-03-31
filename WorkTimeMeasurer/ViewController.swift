@@ -198,6 +198,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 //            toggleStartOrStop()
 //        }
         
+        let row = tableView.rowView(atRow: doingTaskRow!, makeIfNecessary: true)
+        let cellView = row!.view(atColumn: 1) as? NSTableCellView
+        let taskname = cellView!.textField?.stringValue
+
+        
+        
         var hogef = defaults.string(forKey: "startTimeOfToday")
         if (hogef == nil) {
             hogef = fmtNow
@@ -207,7 +213,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             //let ll = DayTaskData(totalTime: 0, taskList: [Task(startTime: now as! Date, endTime: now as! Date, taskName: "DDD")])
         
             
-        let task = ["startTime": hogef, "endTime": hogef, "taskName": "DDD"]
+        let task = ["startTime": hogef, "endTime": hogef, "taskName": taskname!]
         
         let hoge = defaults.object(forKey: hogef!)
         if (hoge == nil) {
@@ -221,7 +227,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             if (b == nil) {
               b = []
             }
-            b!.append(["startTime": fmtNow, "endTime": fmtNow, "taskName": "DDD"])
+            b!.append(["startTime": fmtNow, "endTime": fmtNow, "taskName": taskname!])
             a["taskList"] = b
             let data2 = try? JSONSerialization.data(withJSONObject: a, options: [])
             defaults.set(a, forKey: hogef!)
