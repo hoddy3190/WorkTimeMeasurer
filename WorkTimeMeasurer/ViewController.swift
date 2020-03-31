@@ -193,14 +193,15 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         now = NSDate()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMddHHmmss"
-        
+        let fmtNow = dateFormatter.string(from: now as! Date)
         
 //            toggleStartOrStop()
 //        }
-        let hogef = dateFormatter.string(from: now as! Date)
-        if (!isWorkingToday) {
+        
+        var hogef = defaults.string(forKey: "startTimeOfToday")
+        if (hogef == nil) {
+            hogef = fmtNow
             defaults.set(hogef, forKey: "startTimeOfToday")
-            isWorkingToday = true
         }
             
             //let ll = DayTaskData(totalTime: 0, taskList: [Task(startTime: now as! Date, endTime: now as! Date, taskName: "DDD")])
@@ -208,22 +209,22 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
         let task = ["startTime": hogef, "endTime": hogef, "taskName": "DDD"]
         
-        let hoge = defaults.object(forKey: hogef)
+        let hoge = defaults.object(forKey: hogef!)
         if (hoge == nil) {
             let task = ["totalTime": 0, "taskList": [task]] as [String : Any]
 //            let data2 = try? JSONSerialization.data(withJSONObject: task, options: [])
 //            defaults.set(data2, forKey: hogef)
-            defaults.set(task, forKey: hogef)
+            defaults.set(task, forKey: hogef!)
         } else {
             var a = hoge! as! Dictionary<String, Any>
             var b = a["taskList"] as? [Dictionary<String, String>]
             if (b == nil) {
               b = []
             }
-            b!.append(["startTime": hogef, "endTime": hogef, "taskName": "DDD"])
+            b!.append(["startTime": fmtNow, "endTime": fmtNow, "taskName": "DDD"])
             a["taskList"] = b
             let data2 = try? JSONSerialization.data(withJSONObject: a, options: [])
-            defaults.set(a, forKey: hogef)
+            defaults.set(a, forKey: hogef!)
 //            defaults.set(data2, forKey: hogef)
         }
             
