@@ -67,9 +67,20 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         
         let key = defaults.string(forKey: "startTimeOfToday")!
-//        var obj = defaults.object(forKey: key) as! DayTaskData
-//        let now = NSDate()
-//        (obj.taskList[0]).endTime = now as Date
+        var obj = defaults.object(forKey: key) as! Dictionary<String, Any>
+        let now = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        let end = dateFormatter.string(from: now as! Date)
+        
+        
+        var b = obj["taskList"] as? [Dictionary<String, String>]
+        if (b == nil) {
+            return
+        }
+        var c = b!.last
+        c!["endTime"] = end
+        defaults.set(obj, forKey: key)
     }
     
     
@@ -151,7 +162,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             timer = nil
         now = NSDate()
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyyMMdd"
+            dateFormatter.dateFormat = "yyyyMMddHHmmss"
         
         
 //            toggleStartOrStop()
