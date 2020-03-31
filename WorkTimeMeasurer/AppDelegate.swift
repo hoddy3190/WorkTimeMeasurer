@@ -71,6 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func displayElapsedTime() {
         var startTimeOfToday = defaults.string(forKey: "startTimeOfToday")
         if (startTimeOfToday == nil) {
+            button.title = "WT Measurer"
             return
         }
         let json = defaults.object(forKey: startTimeOfToday!)

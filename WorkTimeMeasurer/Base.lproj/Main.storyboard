@@ -307,6 +307,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="finishForTheDay:" target="cpe-oQ-0EW" id="5Yo-fn-Lx3"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

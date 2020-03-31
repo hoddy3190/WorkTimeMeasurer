@@ -258,6 +258,47 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         tableView.reloadData()
     }
     
+    @IBAction func finishForTheDay(_ sender: Any) {
+        timer?.invalidate()
+        timer = nil
+        
+        
+        let key = defaults.string(forKey: "startTimeOfToday")!
+        //        var initJSONStr = defaults.object(forKey: key) as? String
+        //        let data = initJSONStr!.data(using: .utf8)!
+        //        var data = defaults.data(forKey: key)
+        var json = defaults.object(forKey: key)
+        //        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+        if (json == nil) {
+            return
+        }
+        
+        let now = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        let end = dateFormatter.string(from: now as! Date)
+        
+        
+        
+        var array:Array<Dictionary<String,String>> = []
+        if var checkArray = json as? Dictionary<String,Any> {
+            array = checkArray["taskList"] as! Array<Dictionary<String, String>>
+        }
+        
+        let data2 = try? JSONSerialization.data(withJSONObject: array, options: [])
+        //DataからString
+        let jsonStr = String(bytes: data2!, encoding: .utf8)!
+        
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(jsonStr, forType: .string)
+        
+        defaults.set(nil, forKey: "startTimeOfToday")
+        
+        doingTaskRow = nil
+        tableView.reloadData()
+        
+    }
 }
 
 // thx. https://www.appcoda.com/macos-programming-tableview/
