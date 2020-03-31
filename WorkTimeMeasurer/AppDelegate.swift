@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var startOrStop: Bool = false
     var timer: Timer = Timer()
     
-    
+    var taskNum: Int = 0
     
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -47,6 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(displayElapsedTime), userInfo: nil, repeats: true)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -65,9 +67,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         startOrStop = !startOrStop
     }
     
+    let defaults = UserDefaults.standard
+    @objc func displayElapsedTime() {
+        var startTimeOfToday = defaults.string(forKey: "startTimeOfToday")
+        if (startTimeOfToday == nil) {
+            return
+        }
+        let json = defaults.object(forKey: startTimeOfToday!)
+        if (json == nil) {
+            return
+        }
+        
+        var array:Array<Dictionary<String,String>> = []
+        if var checkArray = json as? Dictionary<String,Any> {
+            array = checkArray["taskList"] as! Array<Dictionary<String, String>>
+            updateTime()
+            if (taskNum != array.count) {
+                displayTime = 0
+                taskNum = array.count
+            }
+        }
+        
+    }
+    
     @objc func updateTime() {
-        elapsedTime = NSDate.timeIntervalSinceReferenceDate
-        displayTime = (elapsedTime + savedTime) - nowTime
+//        elapsedTime = NSDate.timeIntervalSinceReferenceDate
+//        displayTime = (elapsedTime + savedTime) - nowTime
+        displayTime += 1
         let min = Int(displayTime / 60)
         let sec = Int(floor(displayTime)) % 60
         let minText = String(format: "%02d", min)
