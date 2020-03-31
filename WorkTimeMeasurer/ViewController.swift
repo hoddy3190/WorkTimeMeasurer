@@ -69,8 +69,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let key = defaults.string(forKey: "startTimeOfToday")!
 //        var initJSONStr = defaults.object(forKey: key) as? String
 //        let data = initJSONStr!.data(using: .utf8)!
-        var data = defaults.data(forKey: key)
-        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+//        var data = defaults.data(forKey: key)
+        var json = defaults.object(forKey: key)
+//        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
         if (json == nil) {
             return
         }
@@ -87,8 +88,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             array = checkArray["taskList"] as! Array<Dictionary<String, String>>
             array[array.count - 1]["endTime"] = end
             checkArray["taskList"] = array
-            let data2 = try? JSONSerialization.data(withJSONObject: checkArray, options: [])
-            defaults.set(data2, forKey: key)
+//            let data2 = try? JSONSerialization.data(withJSONObject: checkArray, options: [])
+//            defaults.set(data2, forKey: key)
+            defaults.set(checkArray, forKey: key)
         }
         
         
@@ -209,8 +211,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let hoge = defaults.object(forKey: hogef)
         if (hoge == nil) {
             let task = ["totalTime": 0, "taskList": [task]] as [String : Any]
-            let data2 = try? JSONSerialization.data(withJSONObject: task, options: [])
-            defaults.set(data2, forKey: hogef)
+//            let data2 = try? JSONSerialization.data(withJSONObject: task, options: [])
+//            defaults.set(data2, forKey: hogef)
+            defaults.set(task, forKey: hogef)
         } else {
             var a = hoge! as! Dictionary<String, Any>
             var b = a["taskList"] as? [Dictionary<String, String>]
@@ -220,8 +223,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             b!.append(["startTime": hogef, "endTime": hogef, "taskName": "DDD"])
             a["taskList"] = b
             let data2 = try? JSONSerialization.data(withJSONObject: a, options: [])
-//            defaults.set(a, forKey: hogef)
-            defaults.set(data2, forKey: hogef)
+            defaults.set(a, forKey: hogef)
+//            defaults.set(data2, forKey: hogef)
         }
             
         
