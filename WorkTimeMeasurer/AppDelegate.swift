@@ -31,8 +31,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         //statusItem.menu = menu
         button = statusItem.button!
-        button.title = "WT Measurer"
-        button.image = NSImage(named: "icon")
+//        button.title = "WT Measurer"
+        let menubarIcon = NSImage(named: "MenubarIcon")!
+        menubarIcon.size = NSSize(width: 18, height: 18)
+        button.image = menubarIcon
         button.action = #selector(togglePopover(_:))
         
         let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "SecondViewController") as! ViewController
@@ -71,7 +73,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func displayElapsedTime() {
         var startTimeOfToday = defaults.string(forKey: "startTimeOfToday")
         if (startTimeOfToday == nil) {
-            button.title = "WT Measurer"
+            let menubarIcon = NSImage(named: "MenubarIcon")!
+            menubarIcon.size = NSSize(width: 18, height: 18)
+            button.image = menubarIcon
+            button.title = ""
             return
         }
         let json = defaults.object(forKey: startTimeOfToday!)
@@ -100,6 +105,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let minText = String(format: "%02d", min)
         let secText = String(format: "%02d", sec)
         button.title = minText + ":" + secText
+        button.image = nil
     }
     
     
