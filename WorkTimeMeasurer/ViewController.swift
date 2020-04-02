@@ -243,6 +243,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
     
     @IBAction func addNewTask(_ sender: NSTextField) {
+        if (doingTaskRow != nil) {
+            doingTaskRow! += 1
+        }
         var tasknames = defaults.object(forKey: "tasknames") as? [String]
         tasknames!.insert(sender.stringValue, at: 0)
         defaults.set(tasknames, forKey: "tasknames")
@@ -252,6 +255,11 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     @IBAction func deleteTask(_ sender: NSButtonCell) {
         let row = sender.tag
+        if (doingTaskRow != nil) {
+            if (doingTaskRow! > row) {
+                doingTaskRow! -= 1
+            }
+        }
         var tasknames = defaults.object(forKey: "tasknames") as? [String]
         tasknames?.remove(at: row)
         defaults.set(tasknames, forKey: "tasknames")
